@@ -20,13 +20,13 @@ public class Tank {
         this.level = lvl;
     }
 
-    public void setAct(boolean active){
-        this.isActive = active;
-    }
+    public void setAct(boolean active){ this.isActive = active;}
 
     public String getMin(){return String.valueOf(this.min);}
 
     public String getMax(){return String.valueOf(this.max);}
+
+    public int getLvl(){return this.level;}
 
     public boolean getAction(){return this.isActive;}
 
@@ -34,31 +34,20 @@ public class Tank {
         if(!(k<0&&this.level<min-k||k>0&&this.level>max-k))
         this.level+=k;
         else if(k>0)this.level=max;
-        else if(k<0)this.level=min;
-    }
-
-    public void setPump(boolean active, int speed, boolean choice){ // choice = true - In
-        if(choice){
-            //this.pumpIn.setActive(active);
-            //this.pumpIn.setSpeed(speed);
-        }
-        else{
-            //this.pumpOut.setActive(active);
-            //this.pumpOut.setSpeed(speed);
-        }
+        else this.level=min;
     }
 
     public String getInfo(){
-        return "Сост. работы : " + String.valueOf(this.isActive) +
-                "\n Верхний допустимый уровень: "  + String.valueOf(this.max) +
-                "\n Нижний допустимый уровень: "  + String.valueOf(this.min) +
-                "\n Текущий уровень: "  + String.valueOf(this.level) +
-                "\n Насос откачки: "  + "-------------" +
-                "\n Сост. работы: "  + String.valueOf(this.pumpOut.getActive()) +
-                "\n Скорость: "  + String.valueOf(this.pumpOut.getSpeed()) +
-                "\n Насос закачки: "  + "-------------" +
-                "\n Сост. работы: "  + String.valueOf(this.pumpIn.getActive()) +
-                "\n Скорость: "  + String.valueOf(this.pumpIn.getSpeed());
+        return "Сост. работы : " + this.isActive +
+                "\n Верхний допустимый уровень: " + this.max +
+                "\n Нижний допустимый уровень: " + this.min +
+                "\n Текущий уровень: " + this.level +
+                "\n Насос откачки: " + "-------------" +
+                "\n Сост. работы: " + this.pumpOut.getActive() +
+                "\n Скорость: " + this.pumpOut.getSpeed() +
+                "\n Насос закачки: " + "-------------" +
+                "\n Сост. работы: " + this.pumpIn.getActive() +
+                "\n Скорость: " + this.pumpIn.getSpeed();
     }
 
 }
