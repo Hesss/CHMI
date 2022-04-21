@@ -24,7 +24,7 @@ public class Pump {
     }
 
     public String getInfo(){
-        return String.valueOf(this.isActive) + " "  + String.valueOf(this.speed);
+        return this.isActive + " "  + this.speed;
     }
 
 }

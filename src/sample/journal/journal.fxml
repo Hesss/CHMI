@@ -11,47 +11,44 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.journal.JournalController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.journal.JournalController">
    <columnConstraints>
-      <ColumnConstraints />
+      <ColumnConstraints/>
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints />
+      <RowConstraints/>
    </rowConstraints>
-   <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0">
-         <children>
-            <Label layoutX="431.0" layoutY="26.0" prefHeight="51.0" prefWidth="139.0" text="Журнал">
-               <font>
-                  <Font name="Arial Bold" size="36.0" />
-               </font>
-            </Label>
-            <TextArea fx:id="journalArea" layoutX="135.0" layoutY="125.0" prefHeight="425.0" prefWidth="700.0" />
-            <Button layoutX="589.0" layoutY="72.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0" prefWidth="124.0" text="      Обновить">
-               <font>
-                  <Font name="Arial Bold" size="15.0" />
-               </font></Button>
-            <Button id="del" layoutX="723.0" layoutY="72.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0" prefWidth="112.0" text="      Удалить" textFill="RED">
-               <font>
-                  <Font name="Arial Bold" size="15.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="56.0" fitWidth="51.0" layoutX="373.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/journal.png" />
-               </image>
-            </ImageView>
-            <ImageView disable="true" fitHeight="29.0" fitWidth="29.0" layoutX="595.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/refresh.png" />
-               </image>
-            </ImageView>
-            <ImageView disable="true" fitHeight="29.0" fitWidth="63.0" layoutX="729.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/delete.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-   </children>
+   <Pane prefHeight="600.0" prefWidth="1000.0">
+      <Label layoutX="431.0" layoutY="26.0" prefHeight="51.0" prefWidth="139.0" text="Журнал">
+         <font>
+            <Font name="Arial Bold" size="36.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="journalArea" layoutX="135.0" layoutY="125.0" prefHeight="425.0" prefWidth="700.0"/>
+      <Button layoutX="589.0" layoutY="72.0" mnemonicParsing="false" onAction="#refresh" prefHeight="40.0"
+              prefWidth="124.0" text="      Обновить">
+         <font>
+            <Font name="Arial Bold" size="15.0"/>
+         </font>
+      </Button>
+      <Button id="del" layoutX="723.0" layoutY="72.0" mnemonicParsing="false" onAction="#delete" prefHeight="40.0"
+              prefWidth="112.0" text="      Удалить" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="15.0"/>
+         </font>
+      </Button>
+      <ImageView fitHeight="56.0" fitWidth="51.0" layoutX="373.0" layoutY="26.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../images/journal.png"/>
+      </ImageView>
+      <ImageView disable="true" fitHeight="29.0" fitWidth="29.0" layoutX="595.0" layoutY="78.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../images/refresh.png"/>
+      </ImageView>
+      <ImageView disable="true" fitHeight="29.0" fitWidth="63.0" layoutX="729.0" layoutY="78.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../images/delete.png"/>
+      </ImageView>
+   </Pane>
 </GridPane>

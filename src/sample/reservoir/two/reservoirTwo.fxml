@@ -14,99 +14,115 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.reservoir.two.ReservoirTwoController">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="sample.reservoir.two.ReservoirTwoController">
    <columnConstraints>
-      <ColumnConstraints />
+      <ColumnConstraints/>
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints />
+      <RowConstraints/>
    </rowConstraints>
-   <children>
-      <Pane prefHeight="600.0" prefWidth="1000.0">
-         <children>
-            <Label layoutX="449.0" layoutY="14.0" prefHeight="64.0" prefWidth="213.0" text="Резервуар 2" textOverrun="CLIP" underline="true">
-               <font>
-                  <Font name="Arial" size="35.0" />
-               </font>
-            </Label>
-            <Button fx:id="active" defaultButton="true" layoutX="74.0" layoutY="78.0" mnemonicParsing="false" onAction="#tankAction" prefHeight="56.0" prefWidth="153.0" style="-fx-background-color: green;" text="     Вкл/Выкл" textFill="#00ff44">
-               <font>
-                  <Font name="Arial Bold" size="20.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Button layoutX="128.0" layoutY="297.0" mnemonicParsing="false" onAction="#setMin" prefHeight="4.0" prefWidth="97.0" text="задать min lvl" />
-            <Button layoutX="128.0" layoutY="252.0" mnemonicParsing="false" onAction="#setMax" prefHeight="25.0" prefWidth="97.0" text="задать max lvl" />
-            <TextField fx:id="max" layoutX="77.0" layoutY="252.0" prefHeight="25.0" prefWidth="51.0" />
-            <TextField fx:id="min" layoutX="77.0" layoutY="297.0" prefHeight="25.0" prefWidth="51.0" />
-            <Label layoutX="201.0" layoutY="364.0" text="Насос откачки">
-               <font>
-                  <Font name="Arial Bold" size="19.0" />
-               </font></Label>
-            <Label layoutX="366.0" layoutY="364.0" text="Насос закачки">
-               <font>
-                  <Font name="Arial Bold" size="19.0" />
-               </font></Label>
-            <Label layoutX="73.0" layoutY="417.0" text="Состояние">
-               <font>
-                  <Font name="Arial Bold" size="19.0" />
-               </font></Label>
-            <Label layoutX="73.0" layoutY="463.0" text="Скорость">
-               <font>
-                  <Font name="Arial Bold" size="19.0" />
-               </font></Label>
-            <TextField fx:id="outspeed" layoutX="201.0" layoutY="462.0" prefHeight="25.0" prefWidth="90.0" />
-            <TextField fx:id="inspeed" layoutX="366.0" layoutY="461.0" prefHeight="25.0" prefWidth="90.0" />
-            <Button fx:id="data" layoutX="817.0" layoutY="327.0" mnemonicParsing="false" onAction="#getInfo" prefHeight="34.0" prefWidth="37.0">
-               <font>
-                  <Font size="16.0" />
-               </font></Button>
-            <TextArea fx:id="areaData" layoutX="548.0" layoutY="121.0" prefHeight="242.0" prefWidth="269.0" />
-            <Label fx:id="tankActive" layoutX="250.0" layoutY="91.0" prefHeight="30.0" prefWidth="111.0">
-               <font>
-                  <Font name="Arial Bold" size="25.0" />
-               </font></Label>
-            <Button fx:id="pumpOutA" layoutX="201.0" layoutY="411.0" mnemonicParsing="false" onAction="#pumpOutActive" prefHeight="34.0" prefWidth="135.0" text="Выключено">
-               <font>
-                  <Font name="Arial Bold" size="16.0" />
-               </font></Button>
-            <Button fx:id="pumpInA" layoutX="366.0" layoutY="412.0" mnemonicParsing="false" onAction="#pumpInActive" prefHeight="34.0" prefWidth="135.0" text="Выключено">
-               <font>
-                  <Font name="Arial Bold" size="16.0" />
-               </font></Button>
-            <Button layoutX="291.0" layoutY="459.0" mnemonicParsing="false" onAction="#outSpeed" text="OK">
-               <font>
-                  <Font name="Arial Bold" size="16.0" />
-               </font></Button>
-            <Button layoutX="456.0" layoutY="458.0" mnemonicParsing="false" onAction="#inSpeed" text="OK">
-               <font>
-                  <Font name="Arial Bold" size="16.0" />
-               </font></Button>
-            <Label id="err" fx:id="errorMsg" layoutX="74.0" layoutY="159.0" prefHeight="20.0" prefWidth="441.0" textFill="RED">
-               <font>
-                  <Font name="Verdana" size="16.0" />
-               </font></Label>
-            <Label layoutX="76.0" layoutY="198.0" text="Допустимый уровень:">
-               <font>
-                  <Font name="Arial Bold" size="20.0" />
-               </font>
-            </Label>
-            <ImageView disable="true" fitHeight="36.0" fitWidth="37.0" layoutX="77.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/active.png" />
-               </image>
-            </ImageView>
-            <ImageView disable="true" fitHeight="64.0" fitWidth="30.0" layoutX="821.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/refresh.png" />
-               </image>
-            </ImageView>
+   <Pane prefHeight="600.0" prefWidth="1000.0">
+      <Label layoutX="449.0" layoutY="14.0" prefHeight="64.0" prefWidth="213.0" text="Резервуар 2" textOverrun="CLIP"
+             underline="true">
+         <font>
+            <Font name="Arial" size="35.0"/>
+         </font>
+      </Label>
+      <Button defaultButton="true" layoutX="74.0" layoutY="78.0" mnemonicParsing="false"
+              onAction="#tankAction" prefHeight="56.0" prefWidth="153.0" style="-fx-background-color: green;"
+              text="     Вкл/Выкл" textFill="#00ff44">
+         <font>
+            <Font name="Arial Bold" size="20.0"/>
+         </font>
+         <opaqueInsets>
+            <Insets/>
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND"/>
+         </cursor>
+      </Button>
+      <Button layoutX="128.0" layoutY="297.0" mnemonicParsing="false" onAction="#setMin" prefHeight="4.0"
+              prefWidth="97.0" text="задать min lvl"/>
+      <Button layoutX="128.0" layoutY="252.0" mnemonicParsing="false" onAction="#setMax" prefHeight="25.0"
+              prefWidth="97.0" text="задать max lvl"/>
+      <TextField fx:id="max" layoutX="77.0" layoutY="252.0" prefHeight="25.0" prefWidth="51.0"/>
+      <TextField fx:id="min" layoutX="77.0" layoutY="297.0" prefHeight="25.0" prefWidth="51.0"/>
+      <Label layoutX="201.0" layoutY="364.0" text="Насос откачки">
+         <font>
+            <Font name="Arial Bold" size="19.0"/>
+         </font>
+      </Label>
+      <Label layoutX="366.0" layoutY="364.0" text="Насос закачки">
+         <font>
+            <Font name="Arial Bold" size="19.0"/>
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="417.0" text="Состояние">
+         <font>
+            <Font name="Arial Bold" size="19.0"/>
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="463.0" text="Скорость">
+         <font>
+            <Font name="Arial Bold" size="19.0"/>
+         </font>
+      </Label>
+      <TextField fx:id="outspeed" layoutX="201.0" layoutY="462.0" prefHeight="25.0" prefWidth="90.0"/>
+      <TextField fx:id="inspeed" layoutX="366.0" layoutY="461.0" prefHeight="25.0" prefWidth="90.0"/>
+      <Button fx:id="data" layoutX="817.0" layoutY="327.0" mnemonicParsing="false" onAction="#getInfo"
+              prefHeight="34.0" prefWidth="37.0">
+         <font>
+            <Font size="16.0"/>
+         </font>
+      </Button>
+      <TextArea fx:id="areaData" layoutX="548.0" layoutY="121.0" prefHeight="242.0" prefWidth="269.0"/>
+      <Label fx:id="tankActive" layoutX="250.0" layoutY="91.0" prefHeight="30.0" prefWidth="111.0">
+         <font>
+            <Font name="Arial Bold" size="25.0"/>
+         </font>
+      </Label>
+      <Button fx:id="pumpOutA" layoutX="201.0" layoutY="411.0" mnemonicParsing="false" onAction="#pumpOutActive"
+              prefHeight="34.0" prefWidth="135.0" text="Выключено">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Button>
+      <Button fx:id="pumpInA" layoutX="366.0" layoutY="412.0" mnemonicParsing="false" onAction="#pumpInActive"
+              prefHeight="34.0" prefWidth="135.0" text="Выключено">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Button>
+      <Button layoutX="291.0" layoutY="459.0" mnemonicParsing="false" onAction="#outSpeed" text="OK">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Button>
+      <Button layoutX="456.0" layoutY="458.0" mnemonicParsing="false" onAction="#inSpeed" text="OK">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Button>
+      <Label id="err" fx:id="errorMsg" layoutX="74.0" layoutY="159.0" prefHeight="20.0" prefWidth="441.0"
+             textFill="RED">
+         <font>
+            <Font name="Verdana" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="198.0" text="Допустимый уровень:">
+         <font>
+            <Font name="Arial Bold" size="20.0"/>
+         </font>
+      </Label>
+      <ImageView disable="true" fitHeight="36.0" fitWidth="37.0" layoutX="77.0" layoutY="88.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../../images/active.png"/>
+      </ImageView>
+      <ImageView disable="true" fitHeight="64.0" fitWidth="30.0" layoutX="821.0" layoutY="330.0" pickOnBounds="true"
+                 preserveRatio="true">
+         <Image url="@../../../images/refresh.png"/>
+      </ImageView>
 
-         </children>
-      </Pane>
-   </children>
+   </Pane>
 </GridPane>

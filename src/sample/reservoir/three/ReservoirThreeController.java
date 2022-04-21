@@ -8,8 +8,6 @@ import javafx.scene.control.TextField;
 import sample.Journal;
 import sample.Note;
 import sample.menu.MainController;
-import sample.reservoir.Tank;
-import sample.reservoir.two.ReservoirTwo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -48,8 +46,11 @@ public class ReservoirThreeController {
             "Резервуар пуст",
             "Введите положительное число"
     };
+
+    String objName = "Резервуар №3:";
+
     @FXML
-    void setMax() throws IOException {
+    void setMax(){
         try {
             if(Integer.parseInt(max.getText())<0){errorMsg.setText(errors[5]);}
             else {
@@ -64,7 +65,7 @@ public class ReservoirThreeController {
                     }
                     Date date = new Date();
                     SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                    note.setNote(formatForDate.format(date) + " Резервуар №3: верхний допустимый уровень изменен на " + MainController.tankThree.getMax());
+                    note.setNote(formatForDate.format(date), objName, "верхний допустимый уровень изменен на " + MainController.tankThree.getMax());
                     Journal.setList(note);
                     Journal.Save();
                 }
@@ -77,7 +78,7 @@ public class ReservoirThreeController {
     } // Кнопка Задать Max
 
     @FXML
-    void setMin() throws IOException {
+    void setMin(){
         try {
             if (Integer.parseInt(min.getText()) < 0) {
                 errorMsg.setText(errors[5]);
@@ -94,7 +95,7 @@ public class ReservoirThreeController {
                 }
                 Date date = new Date();
                 SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                note.setNote(formatForDate.format(date) + " Резервуар №3: нижний допустимый уровень изменен на " + MainController.tankThree.getMin());
+                note.setNote(formatForDate.format(date), objName, "нижний допустимый уровень изменен на " + MainController.tankThree.getMin());
                 Journal.setList(note);
                 Journal.Save();
             }
@@ -115,14 +116,14 @@ public class ReservoirThreeController {
             pumpOutA.setText("Выключено");
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: выключен");
+            note.setNote(formatForDate.format(date), objName, "выключен");
         } else {
             MainController.tankThree.setAct(true);
             tankActive.setText("Вкл");
             timer1.start(); // Запускается каждые 5 секунд изменение уровня нефти!
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: включен");
+            note.setNote(formatForDate.format(date), objName, "включен");
         }
         Journal.setList(note);
         Journal.Save();
@@ -143,20 +144,20 @@ public class ReservoirThreeController {
             pumpOutA.setText("Выключено");
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: Насос откачки: выключен");
+            note.setNote(formatForDate.format(date), objName, "Насос откачки: выключен");
         } else {
             MainController.tankThree.pumpOut.setActive(true);
             pumpOutA.setText("Включено");
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: Насос откачки: включен");
+            note.setNote(formatForDate.format(date), objName, "Насос откачки: включен");
         }
         Journal.setList(note);
         Journal.Save();
     }
 
     @FXML
-    void outSpeed() throws IOException {
+    void outSpeed(){
         try {
             if(Integer.parseInt(outspeed.getText())<0){errorMsg.setText(errors[5]);}
             else {
@@ -166,7 +167,7 @@ public class ReservoirThreeController {
                 pumpOutA.setText("Включено");
                 Date date = new Date();
                 SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                note.setNote(formatForDate.format(date) + " Резервуар №3: Насос откачки: скорость изменена на " + MainController.tankThree.pumpOut.getSpeed());
+                note.setNote(formatForDate.format(date), objName, "Насос откачки: скорость изменена на " + MainController.tankThree.pumpOut.getSpeed());
                 Journal.setList(note);
                 Journal.Save();
             }
@@ -183,20 +184,20 @@ public class ReservoirThreeController {
             pumpInA.setText("Выключено");
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: Насос закачки: выключен");
+            note.setNote(formatForDate.format(date), objName, "Насос закачки: выключен");
         } else {
             MainController.tankThree.pumpIn.setActive(true);
             pumpInA.setText("Включено");
             Date date = new Date();
             SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-            note.setNote(formatForDate.format(date) + " Резервуар №3: Насос закачки: включен");
+            note.setNote(formatForDate.format(date), objName, "Насос закачки: включен");
         }
         Journal.setList(note);
         Journal.Save();
     }
 
     @FXML
-    void inSpeed() throws IOException {
+    void inSpeed(){
         try {
             if (Integer.parseInt(inspeed.getText()) < 0) {
                 errorMsg.setText(errors[5]);
@@ -207,7 +208,7 @@ public class ReservoirThreeController {
                 pumpInA.setText("Включено");
                 Date date = new Date();
                 SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                note.setNote(formatForDate.format(date) + " Резервуар №3: Насос закачки: скорость изменена на " + MainController.tankThree.pumpIn.getSpeed());
+                note.setNote(formatForDate.format(date), objName, "Насос закачки: скорость изменена на " + MainController.tankThree.pumpIn.getSpeed());
                 Journal.setList(note);
                 Journal.Save();
             }
@@ -228,7 +229,7 @@ public class ReservoirThreeController {
                 limit = true;
                 Date date = new Date();
                 SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                note.setNote(formatForDate.format(date) + " Резервуар №3: Резервуар заполнен");
+                note.setNote(formatForDate.format(date), objName, "Резервуар заполнен");
                 Journal.setList(note);
                 try {
                     Journal.Save();
@@ -240,7 +241,7 @@ public class ReservoirThreeController {
                 limit = true;
                 Date date = new Date();
                 SimpleDateFormat formatForDate = new SimpleDateFormat("MM.dd '|' hh:mm:ss '|'");
-                note.setNote(formatForDate.format(date) + " Резервуар №3: Резервуар пуст");
+                note.setNote(formatForDate.format(date), objName, "Резервуар пуст");
                 Journal.setList(note);
                 try {
                     Journal.Save();

@@ -2,7 +2,6 @@ package sample.menu;
 
 
 import javafx.fxml.FXML;
-import sample.Journal;
 import sample.journal.JournalPage;
 import sample.reservoir.Tank;
 import sample.reservoir.five.ReservoirFive;
@@ -18,7 +17,6 @@ public class MainController{
     public static Tank tankThree = new Tank();
     public static Tank tankFour = new Tank();
     public static Tank tankFive = new Tank();
-    public static Journal j = new Journal();
     @FXML
     void one() throws Exception {
         ReservoirOne firstReservoir = new ReservoirOne();
