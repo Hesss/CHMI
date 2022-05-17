@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Journal {
     public static ArrayList<String> list = new ArrayList<>();
 
+
     public static void setList(Note n){
         list.add(n.getNote());
     }

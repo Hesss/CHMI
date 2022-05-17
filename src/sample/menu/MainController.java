@@ -17,6 +17,11 @@ public class MainController{
     public static Tank tankThree = new Tank();
     public static Tank tankFour = new Tank();
     public static Tank tankFive = new Tank();
+
+    public static int reservoir = 1;
+
+    //todo сделать в главном таблицу с инфой о всех резервах, и журнал (текщая сессия +кнопка вся история)
+    //todo
     @FXML
     void one() throws Exception {
         ReservoirOne firstReservoir = new ReservoirOne();
