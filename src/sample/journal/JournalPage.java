@@ -15,8 +15,8 @@ public class JournalPage extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("journal.fxml"));
         primaryStage.getIcons().add(new Image("@../../images/journal.png"));
-        primaryStage.setTitle("Журнал");
-        primaryStage.setScene(new Scene(root, 1000, 600));
+        primaryStage.setTitle("Journal");
+        primaryStage.setScene(new Scene(root, 900, 700));
         primaryStage.show();
     }
 
